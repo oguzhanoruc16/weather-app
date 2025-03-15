@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #74ebd5;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #74ebd5;
   color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.search-button:hover {
+  background-color: #9face6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  text-align: center;
+}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Hava durumu tipine göre farklı arka planlar */
+.app.clear {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+}
+
+.app.rain {
+  background: linear-gradient(135deg, #3e8e41, #78b08b);
+}
+
+.app.clouds {
+  background: linear-gradient(135deg, #d0e2ff, #a7c6ff);
+}
+
+.app.snow {
+  background: linear-gradient(135deg, #d1e2f2, #a1c4fd);
+}
+
+.app.mist {
+  background: linear-gradient(135deg, #aaaaaa, #888888);
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-input {
+    width: 70%;
+  }
+
+  .search-button {
+    width: 30%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .weather-info {
+    margin-top: 15px;
+  }
+
+  .weather-icon {
+    font-size: 3rem;
+  }
+
+  .city-name {
+    font-size: 1.2rem;
+  }
+
+  .temp {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
   }
 }
