@@ -49,7 +49,7 @@ body {
   text-align: center;
 }
 
-/* Arama Formu */
+
 .search-form {
   display: flex;
   width: 100%;
@@ -97,7 +97,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Hava Durumu Bilgileri */
+
 .weather-info {
   display: flex;
   flex-direction: column;
@@ -135,7 +135,7 @@ body {
   font-style: italic;
 }
 
-/* 5 Günlük Tahmin */
+
 .forecast-info {
   display: flex;
   flex-direction: column;
@@ -154,7 +154,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Tahmin Kartları */
+
 .forecast-cards {
   display: flex;
   justify-content: space-around;
@@ -219,7 +219,7 @@ body {
   content: "💧 ";
 }
 
-/* Farklı Hava Durumlarına Göre Arka Plan */
+
 .app.clear {
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
 }
@@ -240,7 +240,7 @@ body {
   background: linear-gradient(135deg, #aaaaaa, #888888);
 }
 
-/* Mobil Uyumlu Tasarım */
+
 @media (max-width: 768px) {
   .app {
     padding: 20px;

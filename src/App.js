@@ -11,10 +11,10 @@ function App() {
 
   const apiKey = '206d4c2e41c92b7fb28dbe2914354251';
 
-  // Bugünün tarihini ve 5 gün sonrasını hesapla
+
   const getFormattedDate = (offset) => {
     const today = new Date();
-    today.setDate(today.getDate() + offset); // Offset ile günü ilerlet
+    today.setDate(today.getDate() + offset); 
     const day = String(today.getDate()).padStart(2, '0');
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const year = today.getFullYear();
@@ -104,7 +104,7 @@ function App() {
   const handleCitySearch = (e) => {
     e.preventDefault();
     if (city.trim() !== '') {
-      // Şehir araması yapıldığında, location null olabilir, bu yüzden kontrol ekliyoruz
+
       if (location) {
         fetchWeather(location.latitude, location.longitude, city);
         fetchForecast(location.latitude, location.longitude, city);
@@ -146,7 +146,7 @@ function App() {
           <button type="submit" className="search-button">Ara</button>
         </form>
 
-        {/* Sağ üst köşede günün tarihi */}
+        
         <div className="current-date">
           {getCurrentDate()}
         </div>
@@ -173,7 +173,7 @@ function App() {
             <div className="forecast-cards">
               {forecast.list.slice(0, 5).map((item, index) => (
                 <div key={index} className="forecast-card">
-                  <p>{getFormattedDate(index + 1)}</p> {/* Tarih burada güncelleniyor */}
+                  <p>{getFormattedDate(index + 1)}</p> 
                   <p>{Math.round(item.main.temp)}°C</p>
                   <p>{item.weather[0].description}</p>
                   <p>Rüzgar: {item.wind.speed} m/s</p>
