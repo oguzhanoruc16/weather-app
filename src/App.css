@@ -1,91 +1,113 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: #f0f0f0;
+  background: linear-gradient(135deg, #e3f2fd, #90caf9);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   color: #333;
+  transition: background 0.5s ease-in-out;
+  padding: 20px;
 }
 
 .app {
-  background: linear-gradient(135deg, #74ebd5, #9face6);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
   width: 100%;
-  max-width: 450px;
+  max-width: 1000px;
   padding: 30px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.app:hover {
+  transform: translateY(-5px);
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .title {
   font-size: 2rem;
   font-weight: bold;
-  color: #ffffff;
+  color: white;
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Arama Formu */
 .search-form {
   display: flex;
   width: 100%;
+  max-width: 600px;
   justify-content: center;
   margin-bottom: 20px;
+  gap: 10px;
 }
 
 .search-input {
-  width: 80%;
-  padding: 10px;
+  width: 75%;
+  padding: 12px;
   border-radius: 30px;
-  border: 2px solid #ccc;
+  border: none;
   font-size: 1rem;
-  margin-right: 10px;
   outline: none;
-  transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-input:focus {
-  border-color: #74ebd5;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 
 .search-button {
-  padding: 10px 20px;
+  padding: 12px 15px;
   border-radius: 30px;
-  background-color: #74ebd5;
+  background: rgba(255, 255, 255, 0.4);
   color: white;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-width: 60px;
 }
 
 .search-button:hover {
-  background-color: #9face6;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
 }
 
-.error {
-  color: red;
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-
+/* Hava Durumu Bilgileri */
 .weather-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: center;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .weather-icon {
@@ -93,40 +115,121 @@ body {
   margin-bottom: 10px;
 }
 
-.weather-details {
-  text-align: center;
-}
-
 .city-name {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #fff;
+  color: white;
 }
 
 .temp {
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
+  color: white;
   margin-bottom: 10px;
 }
 
 .description {
   font-size: 1.2rem;
-  color: #fff;
+  color: white;
+  font-style: italic;
 }
 
-/* Hava durumu tipine göre farklı arka planlar */
+/* 5 Günlük Tahmin */
+.forecast-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.forecast-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Tahmin Kartları */
+.forecast-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  width: 18%;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-card p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.forecast-card p:first-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.forecast-card p:nth-child(2) {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+.forecast-card p:nth-child(3) {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.forecast-card p:nth-child(4), .forecast-card p:nth-child(5) {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 8px;
+}
+
+.forecast-card p:nth-child(4):before {
+  content: "💨 ";
+}
+
+.forecast-card p:nth-child(5):before {
+  content: "💧 ";
+}
+
+/* Farklı Hava Durumlarına Göre Arka Plan */
 .app.clear {
-  background: linear-gradient(135deg, #00b4db, #0083b0);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
 }
 
 .app.rain {
-  background: linear-gradient(135deg, #3e8e41, #78b08b);
+  background: linear-gradient(135deg, #3a6186, #89253e);
 }
 
 .app.clouds {
-  background: linear-gradient(135deg, #d0e2ff, #a7c6ff);
+  background: linear-gradient(135deg, #1c92d2, #f2fcfe);
 }
 
 .app.snow {
@@ -137,9 +240,20 @@ body {
   background: linear-gradient(135deg, #aaaaaa, #888888);
 }
 
-@media (max-width: 600px) {
+/* Mobil Uyumlu Tasarım */
+@media (max-width: 768px) {
   .app {
     padding: 20px;
+  }
+
+  .weather-info,
+  .forecast-info {
+    width: 100%;
+  }
+
+  .search-form {
+    max-width: 90%;
+    gap: 5px;
   }
 
   .search-input {
@@ -147,15 +261,20 @@ body {
   }
 
   .search-button {
-    width: 30%;
+    width: 25%;
+  }
+
+  .forecast-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-card {
+    width: 90%;
   }
 
   .title {
     font-size: 1.5rem;
-  }
-
-  .weather-info {
-    margin-top: 15px;
   }
 
   .weather-icon {
@@ -173,4 +292,13 @@ body {
   .description {
     font-size: 1rem;
   }
+}
+
+.current-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
 }
